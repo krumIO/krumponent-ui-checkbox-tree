@@ -1,0 +1,24 @@
+{
+  "name": "krumponent-ui-checkbox",
+  "description": "A three-state checkbox web component",
+  "main": "krumponent-ui-checkbox.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  },
+  "homepage": "https://github.com/krumIO/krumponent-ui-checkbox",
+  "_release": "c2e8bfa5b2",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c2e8bfa5b217862d62f19b97f5e12480d825bf8c"
+  },
+  "_source": "https://github.com/krumIO/krumponent-ui-checkbox.git",
+  "_target": "master",
+  "_originalSource": "krumIO/krumponent-ui-checkbox"
+}

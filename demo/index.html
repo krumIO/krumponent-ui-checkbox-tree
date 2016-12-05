@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>krumponent-ui-checkbox-tree demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../krumponent-ui-checkbox-tree.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+
+    <div class="vertical-section-container"  style="margin-left:auto;margin-right:auto;">
+      <center>
+        <h3> krumponent-ui-checkbox-tree Demo</h3>
+      </center>
+      <demo-snippet  style="margin-left:auto;margin-right:auto;height:400px; width:600px; overflow-x: scroll;">
+        <template>
+          <krumponent-ui-checkbox-tree  data='[{id: 1, key: "ab",layers: [{id: 2, key: "abc1",layers: [{id: 3, key: "abc2",layers: [{id: 4, key: "abc3",layers: []}, {id: 22, key: "test",layers: []}]}, {id: 23, key: "test again",layers: []}]},{id: 5, key: "abc1",layers: [{id: 6, key: "abc2",layers: [{id: 7, key: "abc3",layers: []}]}]},{id: 8, key: "abc1",layers: [{id: 9, key: "abc2",layers: [{id: 10, key: "abc3",layers: []}]}]},{id: 11, key: "abc1",layers: [{id: 12, key: "abc2",layers: [{id: 13, key: "abc3",layers: []}]}]}]},{id: 14, key: "ab",layers: [{id: 15, key: "abc1",layers: [{id: 16, key: "abc2",layers: [{id: 17, key: "abc3",layers: []}]}]}]},{id: 18, key: "ab",layers: [{id: 19, key: "abc1",layers: [{id: 20, key: "abc2",layers: [{id: 21, key: "abc3",layers: []}]}]}]}]'></krumponent-ui-checkbox-tree>
+
+          </script>
+        </template>
+      </demo-snippet>
+    </div>
+
+  </body>
+</html>

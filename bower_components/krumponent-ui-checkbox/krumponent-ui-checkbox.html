@@ -1,0 +1,128 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`krum-checkbox`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="krumponent-ui-checkbox">
+  <template>
+    <style  is="custom-style" include="">
+
+    .krum-checkbox {
+      border: 1px solid black;
+      width: 22px;
+      height: 22px;
+    }
+    .checkmark {
+        border: 0px solid black;
+        display:inline-block;
+        background-color: transparent;
+        width: 22px;
+        height:22px;
+        -ms-transform: rotate(45deg); /* IE 9 */
+        -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+        transform: rotate(45deg);
+    }
+
+    .checkmark_top {
+        border: 0px solid black;
+        position: absolute;
+        width:3px;
+        height:9px;
+        background-color: white;
+        left:11px;
+        top:6px;
+    }
+
+    .checkmark_bottom {
+        border: 0px solid black;
+        position: absolute;
+        width:3px;
+        height:3px;
+        background-color: white;
+        left:8px;
+        top:12px;
+    }
+
+    .checked {
+      background-color: #5C6BC0;
+    }
+
+    .indeterminate {
+      background-color: #FFE082;
+    }
+    </style>
+
+    <div id="krum-checkbox" class="krum-checkbox" on-tap="change">
+        <div class="checkmark">
+            <div class="checkmark_top"></div>
+            <div class="checkmark_bottom"></div>
+        </div>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'krumponent-ui-checkbox',
+
+      properties: {
+        checked: {
+          type: Boolean,
+          notify: true,
+          reflectToAttribute: true,
+        },
+        indeterminate: {
+          type: Boolean,
+          notify: true,
+          reflectToAttribute: true,
+          value:false
+        }
+      },
+
+      observers: [
+        '_checked(checked)',
+        '_checkindeterminate(indeterminate)'
+      ],
+
+      _checked: function(checked){
+        if(checked){
+            Polymer.dom(this.root).querySelector('#krum-checkbox').classList.add("checked");
+        }else{
+          Polymer.dom(this.root).querySelector('#krum-checkbox').classList.remove("checked");
+          this.set("indeterminate", false);
+        }
+      },
+
+      _checkindeterminate: function(value){
+        if(value){
+              Polymer.dom(this.root).querySelector('#krum-checkbox').classList.add("indeterminate");
+        }else{
+          Polymer.dom(this.root).querySelector('#krum-checkbox').classList.remove("indeterminate");
+        }
+      },
+
+
+      change: function(event){
+        console.log(Polymer.dom(this.root).querySelector('#krum-checkbox').classList);
+        if(Polymer.dom(this.root).querySelector('#krum-checkbox').classList.contains("checked") && !this.indeterminate){
+          // has class checked
+          this.set("checked", false);
+          Polymer.dom(this.root).querySelector('#krum-checkbox').classList.remove("checked");
+        }else{
+          // does not have class checked
+          if(!this.checked){
+            Polymer.dom(this.root).querySelector('#krum-checkbox').classList.add("checked");
+            this.set("checked", true);
+          }
+          this.indeterminate = false;
+          Polymer.dom(this.root).querySelector('#krum-checkbox').classList.remove("indeterminate");
+        }
+
+      },
+    });
+  </script>
+</dom-module>
