@@ -1,3 +1,5 @@
+![Build Status](https://api.travis-ci.org/krumIO/krumponent-ui-checkbox-tree.svg?branch=master)
+
 # \<krumponent-ui-checkbox-tree\>
 
 
